@@ -56,6 +56,7 @@ class Swallow extends Bird{}
 //几维鸟类
 class BrownKiwi extends Bird
 {
+    @Override
     public void setSpeed(double speed)
     {
            flySpeed=0;
