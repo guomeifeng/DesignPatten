@@ -14,13 +14,14 @@ import java.sql.Connection;
 public class CustomerBuilder {
     
     private static CustomerBuilder singleInstance;
+    CustomerBasic customer;
     
     private CustomerBuilder(){
         
     }
     
-    public CustomerBasic createNewCustomer(Connection con, int custno){
-        CustomerBasic customer = new CustomerBasic();
+    public CustomerBasic getCustomer(Connection con, int custno){
+        customer = new CustomerBasic();
         customer.setCustno(custno);
         customer = getGeneralFromTable(con, customer);
         customer = getAddressFromTable(con, customer);
